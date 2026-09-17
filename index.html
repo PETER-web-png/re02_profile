@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="个人主页 - 热爱编程与网页开发的学习者">
+    <title>个人简介界面</title>
+    <style>  
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: url('C:/Users/21359/Desktop/AI games and website/my-resume/images/bg.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #eeeeee;
+        font-family: "Microsoft Yahei", sans-serif;
+        padding: 40px 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+      main {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+      }
+      /* 打字机动画 */
+      .type-text {
+        display: inline-block;
+        font: bold 200% Consolas, Monaco, monospace;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid transparent;
+        animation: caret 0.5s steps(1) infinite;
+      }
+      @keyframes caret {
+        50% { border-right-color: currentColor; }
+      }
+      /* 头像 */
+      .avatar-box {
+        margin: 30px 0;
+        text-align: center;
+      }
+      .avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 4px solid #72efdd;
+        object-fit: cover;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .avatar:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(114, 237, 221, 0.5);
+      }
+      /* 内容样式 */
+      h2 {
+        color: #72efdd;
+        margin: 25px 0 10px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.7;
+      }
+      a {
+        color: #4cc9f0;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      a:hover {
+        color: #f72585;
+      }
+      /* 链接图标 */
+      .links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 8px 12px 8px 0;
+        padding: 8px 16px;
+        background: rgba(114, 237, 221, 0.1);
+        border-radius: 20px;
+        transition: background 0.3s, transform 0.2s;
+      }
+      .links a:hover {
+        background: rgba(114, 237, 221, 0.2);
+        transform: translateY(-2px);
+      }
+      .link-url {
+        font-size: 14px;
+        color: #888;
+      }
+      /* 页脚 */
+      footer {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        color: #888;
+        font-size: 14px;
+      }
+      .back-top {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 16px;
+        background: #72efdd;
+        color: #1a1a2e;
+        border-radius: 20px;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+      .back-top:hover {
+        background: #4cc9f0;
+      }
+      /* 响应式 */
+      @media (max-width: 600px) {
+        body {
+          padding: 20px 15px;
+        }
+        .type-text {
+          font-size: 100%;
+        }
+        .avatar {
+          width: 120px;
+          height: 120px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span class="type-text" id="typewriter"></span>
+      
+      <div class="avatar-box">
+        <img class="avatar" src="C:/Users/21359/Desktop/AI games and website/my-resume/images/avatar.jpg" alt="我的头像">
+      </div>
+
+      <h2>👤 关于我</h2>
+      <p>你好！我是一名热爱编程与网页开发的学习者。我对前端技术充满热情，喜欢研究HTML、CSS和JavaScript，尝试制作各种有趣的网页效果。我相信代码可以创造美好的事物，也享受从零开始构建一个项目的全过程。</p>
+      <p>在日常生活中，我喜欢探索新技术、阅读技术博客、观看编程教程，也会关注一些设计社区来获取灵感。我坚信持续学习是成长的关键。</p>
+      
+      <h2>📌 兴趣爱好</h2>
+      <p>除了编程，我还有很多其他爱好：</p>
+      <p><strong>🎵 音乐</strong>：喜欢听各种类型的音乐，特别是电子音乐和轻音乐，它们能帮助我专注编程。</p>
+      <p><strong>📸 摄影</strong>：喜欢用镜头记录生活中的美好瞬间，尤其喜欢风景和街拍。</p>
+      <p><strong>📚 阅读</strong>：除了技术书籍，也喜欢阅读科幻小说和人文类书籍。</p>
+      <p><strong>🎮 游戏</strong>：偶尔玩一些独立游戏，欣赏它们的创意和设计。</p>
+      
+      <h2>📚 学习方向</h2>
+      <p>目前正在专注于前端网页开发的学习，已经掌握了HTML、CSS的基础知识，正在深入学习JavaScript。后续计划：</p>
+      <p>• 深入学习JavaScript高级特性（ES6+、异步编程、面向对象）</p>
+      <p>• 学习React或Vue等前端框架</p>
+      <p>• 了解Node.js后端开发基础</p>
+      <p>• 学习计算机基础知识（数据结构、算法）</p>
+      <p>目标是逐步做出更完整、更有创意的个人项目，成为一名优秀的前端开发者。</p>
+
+      <h2>💻 我的项目</h2>
+      <p>这里展示我最近制作的一些小项目：</p>
+      <p>• <strong>打字机效果页面</strong>：就是你现在看到的这个！使用纯CSS和JavaScript实现的打字机动画。</p>
+      <p>• <strong>3D粒子效果</strong>：使用Three.js创建的3D粒子动画，模拟土星环的效果。</p>
+      <p>• <strong>雨滴窗口</strong>：一个模拟雨滴落在窗户上的视觉效果。</p>
+      <p>• <strong>钢琴键盘</strong>：一个可以交互的虚拟钢琴，支持键盘演奏。</p>
+
+      <h2>✨ 技能树</h2>
+      <p><strong>HTML</strong> ⭐⭐⭐⭐⭐ 熟练掌握语义化标签和表格、表单等</p>
+      <p><strong>CSS</strong> ⭐⭐⭐⭐ 掌握Flexbox布局、动画、响应式设计</p>
+      <p><strong>JavaScript</strong> ⭐⭐⭐ 正在学习中，了解DOM操作和基础语法</p>
+      <p><strong>Git</strong> ⭐⭐⭐ 能够进行基本的版本控制操作</p>
+
+      <h2>🔗 相关链接</h2>
+      <div class="links">
+        <a href="https://www.bilibili.com/" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906L17.813 4.653zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773H5.333zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/></svg>
+          <span>B站主页</span>
+          <span class="link-url">bilibili.com</span>
+        </a>
+        <a href="https://github.com/" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span>Github</span>
+          <span class="link-url">github.com</span>
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 个人主页</p>
+      <a href="#" class="back-top">返回顶部</a>
+    </footer>
+
+    <script>
+      // 打字机效果
+      const text = "你好，欢迎来到我的主页";
+      const element = document.getElementById('typewriter');
+      let index = 0;
+      
+      function type() {
+        if (index < text.length) {
+          element.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 150);
+        }
+      }
+      type();
+    </script>
+  </body>
+</html>
